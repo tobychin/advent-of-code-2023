@@ -27,7 +27,6 @@ class GameParser
         "red" => []
       }
       cube_sets.each do |q, c|
-        puts cubes
         # if cubes[c] < q.to_i
           cubes[c].push(q.to_i)
         # end
