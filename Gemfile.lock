@@ -1,7 +1,7 @@
 GEM
   specs:
-    minitest (5.20.0)
-    rake (13.0.1)
+    minitest (5.16.3)
+    rake (13.0.6)
 
 PLATFORMS
   ruby
