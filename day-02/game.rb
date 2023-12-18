@@ -7,8 +7,8 @@ class Game
   end
 
   def possible?(cube_combination)
-    cube_combination.any? do |color, quantity|
-      quantity <= @sets[color].max
+    cube_combination.all? do |color, quantity|
+      @sets[color].max <= quantity
     end
   end
 
@@ -27,9 +27,7 @@ class GameParser
         "red" => []
       }
       cube_sets.each do |q, c|
-        # if cubes[c] < q.to_i
           cubes[c].push(q.to_i)
-        # end
       end
       cubes
     end

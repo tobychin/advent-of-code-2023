@@ -13,28 +13,22 @@ class TestGame < Minitest::Test
   end
 
   def test_that_a_game_is_possible
-    skip "Moved on to day 3, not sure what's wrong here"
-    assert @game.possible?({"blue" => 0, "red" => 0, "green" => 0})
+    assert @game.possible?({"blue" => 14, "red" => 12, "green" => 13})
+  end
+
+  def test_that_a_game_is_not_possible_with_zero_cubes
+    refute @game.possible?({"blue" => 0, "red" => 0, "green" => 0})
   end
 
   def test_that_a_game_is_not_possible_with_too_much_blue
-    skip "Moved on to day 3, not sure what's wrong here"
-    outcome = @game.possible?({"blue" => 17, "red" => 0, "green" => 0})
-    refute_nil outcome
-    refute outcome
+    refute @game.possible?({"blue" => 17, "red" => 0, "green" => 0})
   end
 
   def test_that_a_game_is_not_possible_with_too_much_red
-    skip "Moved on to day 3, not sure what's wrong here"
-    outcome = @game.possible?({"blue" => 0, "red" => 99, "green" => 0})
-    refute_nil outcome
-    refute outcome
+    refute @game.possible?({"blue" => 0, "red" => 99, "green" => 0})
   end
 
   def test_that_a_game_is_not_possible_with_too_much_green
-    skip "Moved on to day 3, not sure what's wrong here"
-    outcome = @game.possible?({"blue" => 0, "red" => 0, "green" => 99})
-    refute_nil outcome
-    refute outcome
+    refute @game.possible?({"blue" => 0, "red" => 0, "green" => 99})
   end
 end
