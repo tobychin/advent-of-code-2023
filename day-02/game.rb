@@ -12,6 +12,10 @@ class Game
     end
   end
 
+  def power
+    @power ||= @sets["red"].max * @sets["green"].max * @sets["blue"].max
+  end
+
   def to_s
     "Game ID: #{id}; Cubes: #{@sets}"
   end
